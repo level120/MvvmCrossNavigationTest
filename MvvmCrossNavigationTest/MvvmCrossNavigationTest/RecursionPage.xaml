@@ -22,6 +22,8 @@
 
             <Button Text="Close Navigation"
                     Command="{Binding CloseCommand}"/>
+            <Button Text="Modal Navigation"
+                    Command="{Binding ModalNavigateCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

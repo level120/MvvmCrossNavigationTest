@@ -38,6 +38,7 @@ namespace MvvmCrossNavigationTest.Droid
             var provider = base.CreateIocProvider();
 
             provider.RegisterType<RecursionPageViewModel>();
+            provider.RegisterType<ModalPageViewModel>();
 
             return provider;
         }

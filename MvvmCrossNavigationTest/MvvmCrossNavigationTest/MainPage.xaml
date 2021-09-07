@@ -24,6 +24,7 @@
             </Label.FormattedText>
         </Label>
         <Button Text="First Navigation" Command="{Binding NavigateCommand}"/>
+        <Button Text="Modal Navigation" Command="{Binding ModalNavigateCommand}"/>
     </StackLayout>
 
 </views:MvxContentPage>
