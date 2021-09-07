@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MvvmCrossNavigationTest.MainPage">
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:mvvmCrossNavigationTest="clr-namespace:MvvmCrossNavigationTest;assembly=MvvmCrossNavigationTest"
+                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                      x:Class="MvvmCrossNavigationTest.MainPage"
+                      x:DataType="mvvmCrossNavigationTest:MainPageViewModel"
+                      x:TypeArguments="mvvmCrossNavigationTest:MainPageViewModel">
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
@@ -19,6 +23,7 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+        <Button Text="First Navigation" Command="{Binding NavigateCommand}"/>
     </StackLayout>
 
-</ContentPage>
+</views:MvxContentPage>

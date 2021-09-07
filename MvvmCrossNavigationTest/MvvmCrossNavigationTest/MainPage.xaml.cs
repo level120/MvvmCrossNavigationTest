@@ -1,8 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using MvvmCross.Forms.Views;
 
 namespace MvvmCrossNavigationTest
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MvxContentPage<MainPageViewModel>
     {
         public MainPage()
         {

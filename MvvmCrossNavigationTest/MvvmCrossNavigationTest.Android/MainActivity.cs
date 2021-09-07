@@ -4,6 +4,7 @@ using Android.Runtime;
 using Android.OS;
 using Microsoft.Extensions.Logging;
 using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 
 namespace MvvmCrossNavigationTest.Droid
@@ -31,9 +32,24 @@ namespace MvvmCrossNavigationTest.Droid
         protected override ILoggerProvider CreateLogProvider() => null;
 
         protected override ILoggerFactory CreateLogFactory() => null;
+
+        protected override IMvxIoCProvider CreateIocProvider()
+        {
+            var provider = base.CreateIocProvider();
+
+            provider.RegisterType<RecursionPageViewModel>();
+
+            return provider;
+        }
     }
 
     public class MvxApp : MvxApplication
     {
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            RegisterAppStart<MainPageViewModel>();
+        }
     }
 }
